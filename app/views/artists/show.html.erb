@@ -1,0 +1,11 @@
+<h1><%= @artist.name %></h1>
+<p><%= "Born in #{@artist.nationality} on #{@artist.dob}." %></p>
+<p><%= image_tag @artist.image %></p>
+<ul>
+	<% @artist.paintings.each do |painting| %>
+	<li><%= link_to "#{painting.title}", painting_path(painting) %></li>
+	<% end %>
+
+</ul>
+
+<button type="button" class="btn btn-default"><%= link_to "Create", new_painting_path %></button> | <%= link_to "Edit", edit_artist_path(@artist) %> | <%= link_to "Delete", artist_path(@artist), method: 'delete' %> | <%= link_to "Home", root_path %> | <%= link_to "Artists", artists_path %>

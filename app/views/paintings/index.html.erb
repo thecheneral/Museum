@@ -1,0 +1,13 @@
+<h1>Paintings!</h1>
+
+<p><%= link_to "Add a new painting", new_painting_path %> | <%= link_to "Artists", artists_path %> | <%= link_to "Galleries", galleries_path %></p>
+
+<br>
+<%= render 'search' %>
+
+<br>
+
+<% @paintings.each do |painting| %>
+	<li><%= link_to "#{painting.title}", painting %> </li>
+
+<% end %>

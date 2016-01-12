@@ -1,0 +1,8 @@
+<h1>Galleries!</h1>
+
+<p><%= link_to "Add a new gallery", new_gallery_path %> | <%= link_to "Paintings", paintings_path %> | <%= link_to "Artists", artists_path %></p>
+
+<% @galleries.each do |gallery| %>
+	<p><%= link_to "#{gallery.name}", gallery %> </p>
+
+<% end %>
